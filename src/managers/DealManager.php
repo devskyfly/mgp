@@ -114,9 +114,9 @@ class DealManager extends AbstractManager
         return $this->serializer->deserialize($result, ContractorDealsResponse::class, 'json');
     }
 
-    public function applyTrigger($id, ProgramTrigger $trigger): bool
+    public function applyTrigger(Deal $deal, ProgramTrigger $trigger): bool
     {
-        $id = Nmbr::toIntegerStrict($id);
+        $id = Nmbr::toIntegerStrict($deal->id);
         $client = $this->client;
         $serializer = $this->serializer;
         
