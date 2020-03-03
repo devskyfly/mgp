@@ -1,0 +1,28 @@
+{
+	"name" : "devskyfly/megaplanv3",
+	"type" : "yii2-extension",
+	"license" : "MIT",
+	"authors" : [{
+			"name" : "Ivan",
+			"email" : "devskyfly@gmail.com"
+		}
+	],
+	"require" : {
+		"php" : ">=5.6.0",
+		"yiisoft/yii2" : "~2.0.14",
+		"yiisoft/yii2-bootstrap" : "^2.0",
+		"yiisoft/yii2-httpclient" : "^2.0",
+		"devskyfly/php56" : "^1.0.0",
+		"jms/serializer" : "^3.4"
+	},
+	"require-dev" : {
+		"codeception/codeception" : "^3.1",
+		"consolidation/robo" : "^1.0.0",
+		"devskyfly/robocmd" : "^v1.0.0"
+	},
+	"autoload" : {
+		"psr-4" : {
+			"devskyfly\\mgp\\" : "src/"
+		}
+	}
+}
