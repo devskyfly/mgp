@@ -23,7 +23,7 @@ class ContractorController extends Controller
         $manager = new ContractorManager(['client' => $mgpClient, 'serializer' => $serializer]);
         $contractor = new ContractorCompany();
         
-        $contractor->name = "Клиент с контактными данными 2";
+        $contractor->name = "Клиент с контактными данными 3";
         $contractor->inn = "0000000001";
         $contractor->activityType = null;
         
@@ -40,7 +40,7 @@ class ContractorController extends Controller
             $email
         ];
         
-        
+        BaseConsole::stdout(print_r($contractor, true));
         $result = $manager->create($contractor);
         BaseConsole::stdout(print_r($result, true));
     }

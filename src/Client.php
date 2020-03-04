@@ -128,6 +128,7 @@ class Client extends BaseObject
 
         $cache = Yii::$app->cache;
         $obj = $this;
+        
         $ans = $cache->getOrSet("authTokenData", function () use (&$obj, $data) {
             $request = $obj->createRequest();
             $request->setMethod('POST')
