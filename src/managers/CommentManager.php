@@ -17,8 +17,7 @@ class CommentManager extends AbstractManager
         $result = [];
 
         $data = $serializer->serialize($comment, 'json');
-        $url = "/api/v3/todo/{$entity->id}/comments";
-        //$url = "/api/v3/comment/";
+        $url = "/api/v3/deal/{$entity->id}/comments";
 
         $result = $client->makePost($url, $data);
 

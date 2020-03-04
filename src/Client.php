@@ -10,7 +10,6 @@ use devskyfly\php56\types\Obj;
 use devskyfly\php56\types\Vrbl;
 use Yii;
 
-
 class Client extends BaseObject
 {
     public $auth = null;

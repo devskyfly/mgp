@@ -15,7 +15,7 @@ class CommentController extends Controller
         $mgpClient = Yii::$app->mgpClient;
         $dealManager = $mgpClient->getManager(DealManager::class);
         $commentManager = $mgpClient->getManager(CommentManager::class);
-        $dealResponse = $dealManager->getById(202);
+        $dealResponse = $dealManager->getById(224);
         $deal = $dealResponse->data;
         $comment = new Comment();
         $comment->content = "Machine comment";
