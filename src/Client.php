@@ -126,12 +126,16 @@ class Client extends BaseObject
             'grant_type' => "password"
         ];
 
-        $request = $this->createRequest();
-        $request->setMethod('POST')
-        ->setUrl($this->crmUrl.'/api/v3/auth/access_token')
-        ->setData($data);
-        $ans = $this->getData($request);
-
+        $cache = Yii::$app->cache;
+        $obj = $this;
+        $ans = $cache->getOrSet("authTokenData", function () use (&$obj, $data) {
+            $request = $obj->createRequest();
+            $request->setMethod('POST')
+            ->setUrl($obj->crmUrl.'/api/v3/auth/access_token')
+            ->setData($data);
+            return $obj->getData($request);
+        }, 3600*24);
+        
         $this->token->value = $ans['access_token'];
         $this->token->expire = $ans['expires_in'];
         $this->token->tokenType = $ans['token_type'];

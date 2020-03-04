@@ -23,16 +23,23 @@ class ContractorController extends Controller
         $manager = new ContractorManager(['client' => $mgpClient, 'serializer' => $serializer]);
         $contractor = new ContractorCompany();
         
-        $contractor->name = "Филпан2";
+        $contractor->name = "Клиент с контактными данными 2";
         $contractor->inn = "0000000001";
         $contractor->activityType = null;
         
-        $contact = new ContactInfo();
-        $contact->type = ContactInfo::TYPE_PHONE;
-        $contact->value = '66666666';
+        $phone = new ContactInfo();
+        $phone->type = ContactInfo::TYPE_PHONE;
+        $phone->value = '66666666';
+        
+        $email = new ContactInfo();
+        $email->type = ContactInfo::TYPE_EMAIL;
+        $email->value = 'philvan@yandex.ru';
+        
         $contractor->contactInfo = [
-            $contact
+            $phone,
+            $email
         ];
+        
         
         $result = $manager->create($contractor);
         BaseConsole::stdout(print_r($result, true));

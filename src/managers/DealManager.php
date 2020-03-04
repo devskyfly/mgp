@@ -43,7 +43,6 @@ class DealManager extends AbstractManager
         $serializer = $this->serializer;
         $url = '/api/v3/deal/' . $id;
         $result = $client->makeGet($url, []);
-        //BaseConsole::stdout(print_r(Json::decode($result), true));
         return $this->serializer->deserialize($result, DealResponse::class, 'json');
     }
 

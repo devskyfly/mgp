@@ -29,17 +29,12 @@ class ContactInfo
      */
     public $value;
 
-    /**
-     *
-     * @Type("string")
-     */
-    public $comment;
+    
+    //@Type("string")
+    //public $comment;
 
-    /**
-     *
-     * @Type("boolean")
-     */
-    public $isMain;
+    //@Type("boolean")
+    //public $isMain;
 
     /*public $subject;*/
 
